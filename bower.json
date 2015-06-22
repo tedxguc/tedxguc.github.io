@@ -1,0 +1,12 @@
+{
+  "name": "tedxguc",
+  "version": "1.2.0",
+  "dependencies": {
+    "consolelog": "~2.0.1",
+    "html5shiv": "~3.7.2",
+    "modernizr": "~2.8.1",
+    "normalize.css": "~3.0.1",
+    "jquery": "~1.11.1"
+  },
+  "devDependencies": {}
+}
