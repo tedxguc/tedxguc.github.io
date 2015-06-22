@@ -14,7 +14,7 @@
 <!--<![endif]-->
 <!-- the "no-js" class is for Modernizr. -->
 
-<head id="www-tedxguc-com" data-template-set="html5-reset">
+<head>
     <meta charset="utf-8">
     <meta http-equiv="Cache-control" content="public">
     <!--
@@ -65,30 +65,34 @@
     <link rel="stylesheet" href="less/reset.less">
     <link rel="stylesheet" type="text/less" href="less/style.less" />
     <!-- <link rel="stylesheet" type="text/css" href="/css/form.css" /> -->
-    <title>TEDxGUC</title>
+   
     <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900' rel='stylesheet' type='text/css'>
 
-        {% block styles %}{% endblock %}
+        {% block styles %}
+        {% endblock %}
 
 </head>
 
 {% block template %}
 
 <body>
-    <div id="container" class="homepage">
-        <img src="img/homepage/background.jpg" id="background" alt="">
-        <section id="intro" class="slide">
-            <div class="awardsRight">
-                <a target="_blank" href="http://www.awwwards.com/best-websites/tedxguc-1"><img src="img/awards/awwwards.png" /></a>
-            </div>
+  {% block backgroundimage %}
+  {% endblock %}
+    
+        {% block awards %}
+            {% endblock %}
+            
+
+             {% block header %}
             <header>
                 <div class="socialMedia">
                     <a target="_blank" href="http://www.youtube.com/user/TEDxGUC"><img src="img/mainElements/subscribeOnYoutube.png" /></a>
                     <a target="_blank" href="http://www.facebook.com/TEDxGUC"><img src="img/mainElements/fb.png" /></a>
                     <a target="_blank" href="https://twitter.com/TEDxGUC"><img src="img/mainElements/twitter.png" /></a>
                 </div>
-                <!-- <nav class= "navbar">
+               {# <nav class= "navbar">
 					<ul id="yw0">
+  
 <li class="active"><a href="index.html">Home</a></li>
 <li><a href="about.html">About</a></li>
 <li><a href="team2014.html">Team</a></li>
@@ -97,14 +101,14 @@
 <li><a href="talks.html">Talks</a></li>
 <li><a href="sponsors.html">Sponsors</a></li>
 <li><a href="contact.html">Contact</a></li>
-</ul>			</nav> -->
+</ul>			</nav> #}
                 <nav class="navbar">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                         <span class="fa fa-bars"></span>
                     </button>
                     <div class="navbar-collapse collapse">
-                        <ul id="yw0">
-                            <li class="active"><a href="index.html">Home</a></li>
+                {% block navbarHighlight %}   <ul id="yw0" class="home"> {% endblock %}
+                            <li><a href="index.html">Home</a></li>
                             <li><a href="about.html">About</a></li>
                             <li><a href="team2014.html">Team</a></li>
                             <li><a href="events.html">Events</a></li>
@@ -128,45 +132,13 @@
                 <div class="fb-like" data-href="http://tedxguc.com/" data-send="true" data-layout="button_count" data-width="450" data-show-faces="false" data-font="arial">
                 </div>
             </header>
-            <div class="neg-parallelogram">
-                &nbsp;
-            </div>
-            <div class="parallelogram">
-                <h2>A TED <strong>TALE</strong></h2>
-            </div>
-            <div class="logoAndInstructions">
-                <img class="homepageLogo" src="img/mainElements/homepageLogo.jpg" />
-                <div class="instructions centredShape">
-                    <div class="instructionLine">
-                        <p>Navigate vertically using your keyboard arrows</p><img class="img1" src="img/mainElements/staticKeyboardArrows.png" /><img id="dynamicArrow" src="img/mainElements/dynamicKeyboardArrow.png" /></div>
-                    <div class="instructionLine">
-                        <p>Or just slowly scroll using your mouse wheel</p><img class="img2" src="img/mainElements/mouse.png" /></div>
-                </div>
-            </div>
-        </section>
-        <section id="play" class="slide">
-        </section>
-        <section id="conclusion" class="slide">
-            <a id="scrollTop" class="top" href="index.html#" title="Back to top"></a>
-            <div id="cssa" class="awards">
-                <a target="_blank" href="http://www.cssawards.net/tedxguc/"><img src="img/awards/cssa.png" /></a>
-            </div>
-            <div id="cssda" class="awards">
-                <a target="_blank" href="http://www.cssdesignawards.com"><img src="img/awards/cssda.png" /></a>
-            </div>
-            <div id="csswinner" class="awards">
-                <a target="_blank" href="http://www.csswinner.com/details/tedxguc/4282/"><img src="img/awards/csswinner.png" /></a>
-            </div>
-            <img class="illustratedLogo centredShape" src="img/homepage/illustratedLogo.png" />
-            <form class="header2 centredShape">
-                <input type="email" name="email" class="newsletter-email" placeholder="youremail@email.com" />
-                <a id='subscribe-submit' href="index.html#" class="subscribeToNewsletter">
-                    <div class="callToAction">
-                        KEEP ME UPDATED
-                    </div>
-                </a>
-            </form>
-            <div class="fb-like" id="recommend" data-href="http://tedxguc.com" data-send="true" data-width="700" data-show-faces="true" data-action="recommend"></div>
+            {% endblock %}
+
+                
+            {% block content %}
+            {% endblock %}
+
+            {% block footer %}
             <footer id="footer">
                 <div class="footer-container">
                     <img class="aboutImg" src="img/mainElements/footerlogo.png" />
@@ -193,6 +165,7 @@
             <!-- footer -->
         </section>
     </div>
+     {% endblock %}
 
      {% endblock %}
      
@@ -267,6 +240,7 @@
         $('#monitor').html(viewportWidth);
     });
     </script>
+    {% block scrpts %}{% endblock %}
     <!-- omar end -->
 </body>
 

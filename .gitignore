@@ -1,0 +1,7 @@
+node_modules
+*.log
+bower_components
+.tmp
+.grunt
+.DS_Store
+.yo-rc.json
