@@ -76,6 +76,8 @@
 {% block template %}
 
 <body>
+
+
   {% block backgroundimage %}
   {% endblock %}
     
@@ -90,6 +92,8 @@
                     <a target="_blank" href="http://www.facebook.com/TEDxGUC"><img src="img/mainElements/fb.png" /></a>
                     <a target="_blank" href="https://twitter.com/TEDxGUC"><img src="img/mainElements/twitter.png" /></a>
                 </div>
+
+
                {# <nav class= "navbar">
 					<ul id="yw0">
   
@@ -103,11 +107,8 @@
 <li><a href="contact.html">Contact</a></li>
 </ul>			</nav> #}
                 <nav class="navbar">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="fa fa-bars"></span>
-                    </button>
                     <div class="navbar-collapse collapse">
-                {% block navbarHighlight %}   <ul id="yw0" class="home"> {% endblock %}
+                {% block navbarHighlight %}   <ul id="yw0" class="home nav navbar-nav"> {% endblock %}
                             <li><a href="index.html">Home</a></li>
                             <li><a href="about.html">About</a></li>
                             <li><a href="team2014.html">Team</a></li>
@@ -119,6 +120,21 @@
                         </ul>
                     </div>
                 </nav>
+
+
+                <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right" id="cbp-spmenu-s2">
+            <h3>Menu</h3>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="team2014.html">Team</a>
+            <a href="events.html">Events</a>
+            <a href="speakers.html">Speakers</a>
+            <a href="talks.html">Talks</a>
+            <a href="sponsors.html">Sponsors</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+        <button class = "menubutton" id="showRight"><span class = "fa fa-bars fa-4x menubar"></span></button>
+
                 <!--<a id="" href="/downloads/downloadApplication.php"><div id="speakerApplication"></div></a>-->
                 <!--
 			<div id="homepageButton">
@@ -134,9 +150,13 @@
             </header>
             {% endblock %}
 
-                
+              <div class="maincontent">  
             {% block content %}
+            
+                
+            
             {% endblock %}
+            </div>
 
             {% block footer %}
             <footer id="footer">
@@ -232,14 +252,25 @@
     })();
     </script>
     <!--  Omar -->
-    <script>
-    $('#monitor').html($(window).width());
+   <script src="js/classie.js"></script>
+        <script>
+            var menuRight = document.getElementById( 'cbp-spmenu-s2' ),
+                showRight = document.getElementById( 'showRight' ),
+                body = document.body;
 
-    $(window).resize(function() {
-        var viewportWidth = $(window).width();
-        $('#monitor').html(viewportWidth);
-    });
-    </script>
+            showRight.onclick = function() {
+                classie.toggle( this, 'active' );
+                classie.toggle( menuRight, 'cbp-spmenu-open' );
+                disableOther( 'showRight' );
+            };
+
+            function disableOther( button ) {
+               
+                if( button !== 'showRight' ) {
+                    classie.toggle( showRight, 'disabled' );
+                }
+            }
+        </script>
     {% block scrpts %}{% endblock %}
     <!-- omar end -->
 </body>

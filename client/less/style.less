@@ -2,6 +2,7 @@ body,
 html {
     /* height: 100%; */
     padding: 0;
+    width:100%;
 }
 
 body {
@@ -1463,9 +1464,8 @@ footer {
 
 footer .footer-container {
     position: absolute;
-    width: 960px;
-    left: 50%;
-    margin-left: -480px;
+    width: 74%;
+    left: 13%;
     bottom: 0;
 }
 
@@ -1960,44 +1960,7 @@ footer .socialMedia {
     display: none;
 }
 
-// omar
-@media screen and (max-width: 1200px) {
-    .navbar-header {
-        float: none;
-    }
-    .navbar-left,
-    .navbar-right {
-        float: none !important;
-    }
-    .navbar-toggle {
-        display: block;
-    }
-    .navbar-collapse {
-        border-top: 1px solid transparent;
-        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
-    }
-    .navbar-fixed-top {
-        top: 0;
-        border-width: 0 0 1px;
-    }
-    .navbar-collapse.collapse {
-        display: none!important;
-    }
-    .navbar-nav {
-        float: none!important;
-        margin-top: 7.5px;
-    }
-    .navbar-nav>li {
-        float: none;
-    }
-    .navbar-nav>li>a {
-        padding-top: 10px;
-        padding-bottom: 10px;
-    }
-    .collapse.in {
-        display: block !important;
-    }
-}
+
 
 ul.home li:nth-child(1),
 ul.about li:nth-child(2),
@@ -2012,5 +1975,107 @@ ul.contact li:nth-child(8) {
     text-decoration: none;
 }
 
-// .mainContent{
-// }
+
+.cbp-spmenu {
+	background:  #FF2B06 ;
+	position: fixed;
+}
+
+.cbp-spmenu h3 {
+	color:  white ;
+	font-size: 1.9em;
+	padding: 20px;
+	margin: 0;
+	font-weight: 300;
+	background:  #FF2B06 ;
+}
+
+.cbp-spmenu a {
+	display: block;
+	color: #fff;
+	font-size: 1.1em;
+	font-weight: 300;
+}
+
+.cbp-spmenu a:hover {
+	background:  #FF2B06 ;
+}
+
+.cbp-spmenu a:active {
+	background:  #FF2B06 ;
+	color:  white ;
+}
+
+
+.cbp-spmenu-vertical {
+	width: 240px;
+	height: 100%;
+	top: 0;
+	z-index: 1000;
+}
+
+.cbp-spmenu-vertical a {
+	border-bottom: 1px solid  #FF2B06 ;
+	padding: 1em;
+}
+
+
+
+.cbp-spmenu-right {
+	right: -240px;
+}
+
+
+.cbp-spmenu-right.cbp-spmenu-open {
+	right: 0px;
+}
+
+
+.maincontent{
+	width:100% !important;
+}
+@media screen and (max-height: 26.375em){
+
+	.cbp-spmenu-vertical {
+		font-size: 90%;
+		width: 190px;
+	}
+
+
+	.cbp-spmenu-right {
+		right: -190px;
+	}
+
+}
+
+.menubutton{
+	background-color: transparent;
+	border-width: 1px;
+	border-radius: 5px;
+	background-color: #FF2B06;
+	position:fixed;
+	right: 80px;
+
+}
+
+.menubar {
+	color: white;
+}
+
+@media screen and (max-width: 1200px){
+	.navbar{
+		display: none;
+	}
+	.menubutton{
+		display: block;
+	}
+	footer{
+		height: 250px;
+	}
+	footer .footer-bottom-right{
+		position: absolute;
+		margin-top: 0px;
+		top: 0px;
+	}
+
+}

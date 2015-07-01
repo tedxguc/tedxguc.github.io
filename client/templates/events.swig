@@ -32,7 +32,6 @@
 		
 <div id="yw0" class="list-view">
 <div class="summary">Displaying 1-2 of 2 result(s).</div>
-
 <div class="items">
 <article >
 	<a href="events/Xlounge.html"><img src="img/events/xlounge.png" alt="XLounge thumb"></a>	<section>
