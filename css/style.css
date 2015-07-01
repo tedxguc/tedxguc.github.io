@@ -449,6 +449,10 @@ html.ie6 .instructions {
     float: right;
     margin-top: 14px;
 }
+
+.loadingPic{
+	display: none;
+}
 /**/
 /*Parallelogram*/
 
